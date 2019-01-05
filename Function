@@ -1,0 +1,9 @@
+function [x_Value]= finiteDifferenceFunction(func, points)
+ %f = @(x) cos(x);
+%t = 0:0.1:2*pi %pick our points
+f = func;
+t = points;
+h=t(2)-t(1)
+n = length(points); 
+Amat = 1/h^2*full(gallery('tridiag',n,1,-2,1));
+x_Value = Amat\f(t)';   %inverse of (Amatrix) * f(Xj)
