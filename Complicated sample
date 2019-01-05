@@ -1,0 +1,11 @@
+%talk complicated equation
+
+f=@(x) (log(x)).^cos(x).*tan(x+5);%change it!
+
+t = 0.05:0.1:2*pi;
+gsoln=finiteDifferenceFunction(f,t);
+figure(3)
+plot(t,gsoln,'-o')
+xlabel('x')
+
+ylabel('u(x)')
