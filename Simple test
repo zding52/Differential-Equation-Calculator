@@ -1,0 +1,25 @@
+f= @(x) sin(x);
+
+t = 0:0.1:2*pi;
+
+soln=finiteDifferenceFunction(f,t)
+
+
+true=@(x) -sin(x);
+truesoln=true(t);
+
+
+figure(1)
+plot(t,soln,'-o',t,truesoln)
+xlabel('x')
+ylabel('u(x)')
+
+
+g=@(x) exp(-x.*x);
+
+gsoln=finiteDifferenceFunction(g,t);
+
+figure(2)
+plot(t,gsoln,'-o')
+xlabel('x')
+ylabel('u(x)')
